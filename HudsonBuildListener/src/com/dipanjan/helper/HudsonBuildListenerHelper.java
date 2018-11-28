@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package com.dipanjan.helper;
 
 import java.io.IOException;
@@ -17,10 +20,24 @@ import com.dipanjan.exception.BuildEnvironmentNotFoundException;
 import com.dipanjan.listener.BuildListener;
 import com.dipanjan.listener.HudsonBuildListener;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class HudsonBuildListenerHelper.
+ */
 public class HudsonBuildListenerHelper { 
 	
+	/** The web refresh rate. */
 	static int _webRefreshRate = 400;
 	
+   /**
+    * Gets the hudson build status.
+    *
+    * @param environment the environment
+    * @param appName the app name
+    * @param hudsonBuildListener the hudson build listener
+    * @param hunsonBuildStatus the hunson build status
+    * @param refreshRate the refresh rate
+    */
    public static void _getHudsonBuildStatus(String environment,String appName,HudsonBuildListener hudsonBuildListener, BuildListener hunsonBuildStatus,int refreshRate){
 		 
 	   if(refreshRate!=0){
@@ -29,6 +46,14 @@ public class HudsonBuildListenerHelper {
 	   _getHudsonBuildStatus(environment,appName,hudsonBuildListener,hunsonBuildStatus);
     }
 	
+    /**
+     * Gets the hudson build status.
+     *
+     * @param environment the environment
+     * @param appName the app name
+     * @param hudsonBuildListener the hudson build listener
+     * @param hunsonBuildStatus the hunson build status
+     */
     public static void _getHudsonBuildStatus(String environment,String appName,HudsonBuildListener hudsonBuildListener, BuildListener hunsonBuildStatus){
     	
     	 Document doc;
@@ -117,15 +142,33 @@ public class HudsonBuildListenerHelper {
     	
     }
     
+    /**
+     * Sets the count to zero.
+     *
+     * @param count the count
+     * @return the int
+     */
     public static int _setCountToZero(int count){
     	count=0;
     	return count;
     }
     
+    /**
+     * Sets the default build status.
+     *
+     * @param buildStatus the build status
+     */
     public static void _setDefaultBuildStatus(Map<String,String> buildStatus){
     	if(buildStatus!=null)buildStatus.clear();
     }
     
+    /**
+     * Check if web site up.
+     *
+     * @param environment the environment
+     * @param hudsonBuildListener the hudson build listener
+     * @return true, if successful
+     */
     public static boolean checkIfWebSiteUp(String environment,HudsonBuildListener hudsonBuildListener ){
     	 Document doc=null;
     	 String url;
@@ -161,6 +204,13 @@ public class HudsonBuildListenerHelper {
          
     } 
     
+	/**
+	 * Gets the max build version.
+	 *
+	 * @param environment the environment
+	 * @param hudsonBuildListener the hudson build listener
+	 * @return the int
+	 */
 	public static int _getMaxBuildVersion(String environment,HudsonBuildListener hudsonBuildListener) {
 
 		Document doc;

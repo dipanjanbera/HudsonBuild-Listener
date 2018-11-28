@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package com.dipanjan.helper;
 
 import java.io.BufferedInputStream;
@@ -11,8 +14,20 @@ import java.util.Collections;
 
 import com.dipanjan.exception.BuildEnvironmentNotFoundException;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class FileDownloder.
+ */
 public class FileDownloder {
     
+    /**
+     * Start download.
+     *
+     * @param env the env
+     * @param buildCopyPath the build copy path
+     * @param DOWNLOAD_MODE the download mode
+     * @param downloadListener the download listener
+     */
     public static void startDownload(String env,String buildCopyPath,int DOWNLOAD_MODE,DownloadListener downloadListener) {
     	String PORTAL_URL=null;
     	String LOSAPP_URL=null;
@@ -45,6 +60,16 @@ public class FileDownloder {
 		}
     }
     
+    /**
+     * Start download.
+     *
+     * @param env the env
+     * @param DOWNLOAD_MODE the download mode
+     * @param PORTAL_URL the portal url
+     * @param LOSAPP_URL the losapp url
+     * @param BUILD_COPY_PATH the build copy path
+     * @param downloadListener the download listener
+     */
     public static void startDownload(String env,int DOWNLOAD_MODE,String PORTAL_URL,String LOSAPP_URL,String BUILD_COPY_PATH,DownloadListener downloadListener){
         String folder_path = createFolder(BUILD_COPY_PATH);
     	switch (DOWNLOAD_MODE) {
@@ -65,10 +90,23 @@ public class FileDownloder {
 		}
     }
     
+    /**
+     * Gets the file name from URL.
+     *
+     * @param url the url
+     * @return the file name from URL
+     */
     private static String getFileNameFromURL(String url){
     	return url.substring(url.lastIndexOf("/")+1);
     }
 
+    /**
+     * Download using stream.
+     *
+     * @param urlStr the url str
+     * @param file the file
+     * @param downloadListener the download listener
+     */
     private static void downloadUsingStream(String urlStr, String file,DownloadListener downloadListener){
         URL url;
 		try {
@@ -94,6 +132,11 @@ public class FileDownloder {
         downloadListener._onDownloadEnded();
     }
 
+    /**
+     * List all files.
+     *
+     * @param filePath the file path
+     */
     private static void listAllFiles(String filePath){
     	File folder = new File(filePath);
     	File[] listOfFiles = folder.listFiles();
@@ -108,6 +151,12 @@ public class FileDownloder {
     	
     }
     
+    /**
+     * Creates the folder.
+     *
+     * @param path the path
+     * @return the string
+     */
     private static String createFolder(String path){
     	File folder = new File(path+"BUILD_"+getMaxBuildVersion(path));
     	if (!folder.exists()) {
@@ -120,6 +169,12 @@ public class FileDownloder {
     	return folder.getAbsolutePath();
     }
     
+    /**
+     * Gets the max build version.
+     *
+     * @param path the path
+     * @return the max build version
+     */
     private static int getMaxBuildVersion(String path){
     	ArrayList<Integer> arrList = new ArrayList<Integer>();
     	File folder = new File(path);
@@ -136,6 +191,13 @@ public class FileDownloder {
     }
     
 
+    /**
+     * Gets the portal URL.
+     *
+     * @param environment the environment
+     * @return the portal URL
+     * @throws BuildEnvironmentNotFoundException the build environment not found exception
+     */
     public static String getPortalURL(String environment) throws BuildEnvironmentNotFoundException{
     	if (environment.equalsIgnoreCase("emer")) {
     		return PORTALURL.EMER_PORTAL_URL;
@@ -160,6 +222,13 @@ public class FileDownloder {
     }
 
 
+/**
+ * Gets the base product URL.
+ *
+ * @param environment the environment
+ * @return the base product URL
+ * @throws BuildEnvironmentNotFoundException the build environment not found exception
+ */
 public static String getBaseProductURL(String environment) throws BuildEnvironmentNotFoundException{
 	if (environment.equalsIgnoreCase("emer")) {
 		return LOS_WEB_APP_URL.EMER_URL;
