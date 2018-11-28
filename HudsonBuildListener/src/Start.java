@@ -29,21 +29,29 @@ public class Start {
 			
 			@Override
 			public void _onWebsiteRespondedWithSuccess() {
-				// TODO Auto-generated method stub
+				System.out.println("Connection established with host!");
 				
 			}
 			
 			@Override
 			public void _onWebsiteNotResponding() {
-				// TODO Auto-generated method stub
+				System.exit(0);
 				
 			}
 			
 			@Override
 			public void _onIncorrectWebsiteURL() {
-				// TODO Auto-generated method stub
+				System.exit(0);
 				
 			}
+
+			@Override
+			public void _WebsiteConnectionStatus(String msg) {
+				System.out.println(msg);
+				
+			}
+
+			
 		});
 		try {
 			Thread.sleep(5000);

@@ -3,10 +3,13 @@
  */
 package com.dipanjan.listener;
 
+import java.lang.invoke.ConstantCallSite;
 import java.util.Map;
 
 import com.dipanjan.exception.BuildEnvironmentNotFoundException;
+import com.dipanjan.helper.Constants;
 import com.dipanjan.helper.HudsonBuildListenerHelper;
+import com.sun.corba.se.impl.orbutil.closure.Constant;
 
 
 
@@ -105,38 +108,26 @@ public class HudsonBuildListener{
 	 */
 	public String _getHudsonBuildURL(String environment) throws BuildEnvironmentNotFoundException{
 		if(environment.equalsIgnoreCase("emer")){
-			return AppConstant.BUILD_URL_FOR_MAX_VER.EMERGENCY_EVN_BUILD;
+			return Constants.BUILD_URL_FOR_MAX_VER.EMERGENCY_EVN_BUILD;
 		}
 		if(environment.equalsIgnoreCase("trunk")){
-			return AppConstant.BUILD_URL_FOR_MAX_VER.TRUNK_EVN_BUILD;
+			return Constants.BUILD_URL_FOR_MAX_VER.TRUNK_EVN_BUILD;
 		}
 		if(environment.equalsIgnoreCase("uat1")){
-			return AppConstant.BUILD_URL_FOR_MAX_VER.UAT1_EVN_BUILD;
+			return Constants.BUILD_URL_FOR_MAX_VER.UAT1_EVN_BUILD;
 		}
 		if(environment.equalsIgnoreCase("uat2")){
-			return AppConstant.BUILD_URL_FOR_MAX_VER.UAT2_EVN_BUILD;
+			return Constants.BUILD_URL_FOR_MAX_VER.UAT2_EVN_BUILD;
 		}
 		if(environment.equalsIgnoreCase("uat3")){
-			return AppConstant.BUILD_URL_FOR_MAX_VER.UAT3_EVN_BUILD;
+			return Constants.BUILD_URL_FOR_MAX_VER.UAT3_EVN_BUILD;
 		}
 		if(environment.equalsIgnoreCase("uat5")){
-			return AppConstant.BUILD_URL_FOR_MAX_VER.UAT5_EVN_BUILD;
+			return Constants.BUILD_URL_FOR_MAX_VER.UAT5_EVN_BUILD;
 		}
 		else{
 			throw new BuildEnvironmentNotFoundException();
 		}
 	}
 	
-}
-
-interface AppConstant{
-	
-	interface BUILD_URL_FOR_MAX_VER{
-	String EMERGENCY_EVN_BUILD = "http://3.209.152.38:7504/hudson/view/Emergency/job/framework_Emergency/";
-	String TRUNK_EVN_BUILD = "http://3.209.152.38:7504/hudson/view/Trunk/job/framework_trunk/";
-	String UAT1_EVN_BUILD = "http://3.209.152.38:7504/hudson/view/UAT1/job/framework_UAT1/";
-	String UAT2_EVN_BUILD = "http://3.209.152.38:7504/hudson/view/UAT2/job/framework_UAT2/";
-	String UAT3_EVN_BUILD = "http://3.209.152.38:7504/hudson/view/UAT3/job/framework_UAT3/";
-	String UAT5_EVN_BUILD = "http://3.209.152.38:7504/hudson/view/UAT5/job/framework_UAT5/";
-	}
 }

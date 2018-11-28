@@ -28,4 +28,7 @@ public interface WebsiteResponseListener {
 	 * On incorrect website URL.
 	 */
 	public void _onIncorrectWebsiteURL();
+	
+	
+	public void _WebsiteConnectionStatus(String msg);
 }

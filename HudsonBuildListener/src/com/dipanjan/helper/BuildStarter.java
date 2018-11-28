@@ -13,10 +13,11 @@ public class BuildStarter {
 	public static void startBuild(String env,WebsiteResponseListener websiteResponseListener) {
 		HttpURLConnection con = null;
 		URL urlObj;
+		
 		try {
 			urlObj = new URL(_getHudsonBuildURL(env));
-	
-				con = (HttpURLConnection) urlObj.openConnection();
+			websiteResponseListener._WebsiteConnectionStatus("Connecting....");
+			con = (HttpURLConnection) urlObj.openConnection();
 		
 			int resp = con.getResponseCode();
 			if(resp == 200){
@@ -32,9 +33,11 @@ public class BuildStarter {
 		} catch (BuildEnvironmentNotFoundException e) {
 			
 			e.printStackTrace();
+			websiteResponseListener._onIncorrectWebsiteURL();
 		} catch (IOException e) {
 			
 			e.printStackTrace();
+			websiteResponseListener._onIncorrectWebsiteURL();
 		}
 		
 	}
@@ -42,36 +45,28 @@ public class BuildStarter {
 	public static String _getHudsonBuildURL(String environment)
 			throws BuildEnvironmentNotFoundException {
 		if (environment.equalsIgnoreCase("emer")) {
-			return BuildEnv.emer;
+			return Constants.BuildEnv.emer;
 		}
 		if (environment.equalsIgnoreCase("trunk")) {
-			return BuildEnv.trunk;
+			return Constants.BuildEnv.trunk;
 		}
 		if (environment.equalsIgnoreCase("uat1")) {
-			return BuildEnv.UAT1;
+			return Constants.BuildEnv.UAT1;
 		}
 		if (environment.equalsIgnoreCase("uat2")) {
-			return BuildEnv.UAT2;
+			return Constants.BuildEnv.UAT2;
 		}
 		if (environment.equalsIgnoreCase("uat3")) {
-			return BuildEnv.UAT3;
+			return Constants.BuildEnv.UAT3;
 		}
 		if (environment.equalsIgnoreCase("uat5")) {
-			return BuildEnv.UAT5;
+			return Constants.BuildEnv.UAT5;
 		} else {
 			throw new BuildEnvironmentNotFoundException();
 		}
 }
 }
 
-interface BuildEnv {
-	String emer = "http://3.209.152.38:7504/hudson/view/Emergency/job/framework_Emergency/build?delay=0sec";
-	String trunk = "http://3.209.152.38:7504/hudson/view/Trunk/job/framework_trunk/build?delay=0sec";
-	String UAT1 = "http://3.209.152.38:7504/hudson/view/UAT1/job/framework_UAT1/build?delay=0sec";
-	String UAT2 = "http://3.209.152.38:7504/hudson/view/UAT2/job/framework_UAT2/build?delay=0sec";
-	String UAT3 = "http://3.209.152.38:7504/hudson/view/UAT3/job/framework_UAT3/build?delay=0sec";
-	String UAT5 = "http://3.209.152.38:7504/hudson/view/UAT5/job/framework_UAT5/build?delay=0sec";
 
-}
 
 
