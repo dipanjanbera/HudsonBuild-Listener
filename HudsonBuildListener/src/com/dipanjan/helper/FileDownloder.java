@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 import com.dipanjan.exception.BuildEnvironmentNotFoundException;
+import com.dipanjan.listener.DownloadListener;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -275,8 +276,3 @@ interface LOS_WEB_APP_URL{
 
 
 
-interface DownloadListener{
-	public void _onDownloadStarted();
-	public void _onDownloadEnded();
-	public void _onDownloadFailed();
-}
