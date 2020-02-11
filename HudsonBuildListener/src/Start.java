@@ -23,7 +23,7 @@ public class Start {
 	 * @param args the arguments
 	 */
 	public static void main(String args[]){
-		 String BUILD_COPY_PATH = "C://Users//1028657//GE_TCS_CONFIDENTIAL//1.IMPORTANT_DOCUMENTS//MIS//LOTUS_MIS_REPORT//";
+		 String BUILD_COPY_PATH = "";
 		 String ENV = "emer";
 		BuildStarter.startBuild("", new WebsiteResponseListener() {
 			
