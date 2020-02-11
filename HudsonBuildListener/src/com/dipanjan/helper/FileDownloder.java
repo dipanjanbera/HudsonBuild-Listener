@@ -256,21 +256,21 @@ public static String getBaseProductURL(String environment) throws BuildEnvironme
 
 	
 interface PORTALURL{
-	String EMER_PORTAL_URL = "http://3.209.152.38:7504/hudson/view/Emergency/job/OriginationsPortal_Emergency/ws/dist/OriginationsPortal.war";
-	String UAT1_PORTAL_URL = "http://3.209.152.38:7504/hudson/view/UAT1/job/OriginationsPortal_UAT1/ws/dist/OriginationsPortal.war";
-	String UAT2_PORTAL_URL = "http://3.209.152.38:7504/hudson/view/UAT2/job/OriginationsPortal_UAT2/ws/dist/OriginationsPortal.war";
-	String UAT3_PORTAL_URL = "http://3.209.152.38:7504/hudson/view/UAT3/job/OriginationsPortal_UAT3/ws/dist/OriginationsPortal.war";
-	String UAT5_PORTAL_URL = "http://3.209.152.38:7504/hudson/view/UAT5/job/OriginationsPortal_UAT5/ws/dist/OriginationsPortal.war";
-	String TRUNK_PORTAL_URL = "http://3.209.152.38:7504/hudson/view/Trunk/job/OriginationsPortal_Trunk/ws/dist/OriginationsPortal.war";
+	String EMER_PORTAL_URL = "";
+	String UAT1_PORTAL_URL = "";
+	String UAT2_PORTAL_URL = "";
+	String UAT3_PORTAL_URL = "";
+	String UAT5_PORTAL_URL = "";
+	String TRUNK_PORTAL_URL = "";
 }
 
 interface LOS_WEB_APP_URL{
-	String EMER_URL = "http://3.209.152.38:7504/hudson/job/LOSWebApp_Emergency/ws/dist/LOSAppEar.ear";
-	String UAT1_URL = "http://3.209.152.38:7504/hudson/job/LOSWebApp_UAT1/ws/dist/LOSAppEar.ear";
-	String UAT2_URL = "http://3.209.152.38:7504/hudson/job/LOSWebApp_UAT2/ws/dist/LOSAppEar.ear";
-	String UAT3_URL = "http://3.209.152.38:7504/hudson/job/LOSWebApp_UAT3/ws/dist/LOSAppEar.ear";
-	String UAT5_URL = "http://3.209.152.38:7504/hudson/job/LOSWebApp_UAT5/ws/dist/LOSAppEar.ear";
-	String TRUNK_URL = "http://3.209.152.38:7504/hudson/job/LOSWebApp_Trunk/ws/dist/LOSAppEar.ear";
+	String EMER_URL = "";
+	String UAT1_URL = "";
+	String UAT2_URL = "";
+	String UAT3_URL = "";
+	String UAT5_URL = "";
+	String TRUNK_URL = "";
 }
 
 
